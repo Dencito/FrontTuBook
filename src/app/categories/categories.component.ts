@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 })
 export class CategoriesComponent {
   booksData: any;
-  imgPost: any;
   formData: FormData = new FormData();
+
 
   constructor(private http: HttpClient) { }
 
@@ -29,25 +29,25 @@ export class CategoriesComponent {
       });
   }
 /* 
-  async uploadImage(image: File): Promise<void> {
-    const formData: FormData = new FormData();
-    formData.append('image', image);
-    console.log(image)
-
-    try {
-      const response = await this.http.post<any>('http://107.22.25.39:3000/images', formData).toPromise();
-      console.log('Image uploaded successfully:', response);
-      // Handle the response here
-    } catch (error) {
-      console.error('Error uploading image:', error);
-      // Handle the error here
+  onFileChange(event: Event) {
+    const inputElement = event.target as HTMLInputElement;
+    if (inputElement.files && inputElement.files.length > 0) {
+      const file = inputElement.files[0];
+      this.formData.append('image', file);
+      console.log(file)
     }
   }
 
-  handlePost = () => {
-    this.uploadImage(this.imgPost);
-  }
- */
+  async handlePost() {
+    try {
+      const response = await this.http.post<any>('http://107.22.25.39:3000/images', this.formData).toPromise();
+      console.log('Image uploaded successfully:', response);
+    } catch (error) {
+      console.error('Error uploading image:', error);
+
+    }
+  } */
+
   ngOnInit() {
     this.getBooksAll();
   }

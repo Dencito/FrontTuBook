@@ -21,30 +21,6 @@ outline: none;
     right: 5px;
 }
 
-.notification-user button {
-    margin-right: 15px;
-    border: none;
-    background-color: transparent;
-    position: relative;
-}
-
-.notification-user button i {
-    font-size: 25px;
-}
-
-.notification-user button span {
-    position: absolute;
-    background-color: #e31e1e;
-    width: 20px;
-    height: 20px;
-    color: #fff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    top: 7px;
-    right: -2px;
-}
 
 .notification-user .user {
     cursor: pointer;

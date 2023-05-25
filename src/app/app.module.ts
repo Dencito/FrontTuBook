@@ -9,6 +9,11 @@ import { ListBooksComponent } from './list-books/list-books.component';
 import { ItemBookComponent } from './item-book/item-book.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CategoriesComponent } from './categories/categories.component';
+import { MyBooksComponent } from './my-books/my-books.component';
+import { NotificationComponent } from './notification/notification.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,12 +22,17 @@ import { CategoriesComponent } from './categories/categories.component';
     HomeComponent,
     ListBooksComponent,
     ItemBookComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    MyBooksComponent,
+    NotificationComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
