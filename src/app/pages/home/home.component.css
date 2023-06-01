@@ -1,5 +1,4 @@
 .header-page input{
-    width: 350px;
     height: 27px;
     border: 1px solid;
     border-radius: 15px;
@@ -26,11 +25,25 @@ outline: none;
     cursor: pointer;
 }
 
-.notification-user .user img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 2px;
+
+.categories .bts {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
 }
  
+.categories .bts button {
+    border: none;
+    background-color: #6e6cc8;
+    color: #fff;
+    padding: 3px 10px;
+    border-radius: 15px;
+    font-size: 18px;
+    margin: 20px 0;
+    transition: all .4s;
+}
+
+.categories .bts button:hover {
+    background-color: #000000;
+    transform: translateY(-5px);
+}

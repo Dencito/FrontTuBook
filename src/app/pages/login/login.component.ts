@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { AuthService } from '../../auth.service';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -9,13 +9,20 @@ import Swal from 'sweetalert2';
 })
 
 export class LoginComponent {
-  username: string | any;
+  email: string | any;
   password: string | any;
+  pathWindow: string = document.location.pathname
+  user: any = window.localStorage.getItem('user');
+
+  getUser = () => {
+    const parse = JSON.parse(this.user)
+    return parse
+  }
 
   constructor(private authService: AuthService) { }
-
+  
   async login() {
-    const userCapture = await this.authService.login(this.username, this.password);
+    const userCapture = await this.authService.login(this.email, this.password);
     if (!userCapture.error) {
       window.localStorage.setItem('user', JSON.stringify(userCapture));
       console.log('Inicio de sesión exitoso', userCapture);
@@ -31,6 +38,11 @@ export class LoginComponent {
         title: 'Failed Login',
       })
 
+    }
+  }
+  ngOnInit() {
+    if(this.pathWindow === "/login") {
+      this.getUser()?.email ? window.location.replace(""): "sin logear"
     }
   }
 
