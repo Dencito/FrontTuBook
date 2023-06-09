@@ -5,9 +5,9 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-  private readonly API_URL = 'http://107.22.25.39:3000/users/login';
+  private readonly API_URL = 'https://bk48t1027l.execute-api.us-east-1.amazonaws.com/dev/users/login';
   private readonly USER_KEY = 'user';
-  private readonly API_URL_REGISTER = 'http://107.22.25.39:3000/users/register';
+  private readonly API_URL_REGISTER = 'https://bk48t1027l.execute-api.us-east-1.amazonaws.com/dev/users/register';
   constructor(private http: HttpClient) {}
 
   isLoggedIn(): boolean {

@@ -20,7 +20,7 @@ export class HomeComponent {
     return parse;
   };
   getBooks = async () => {
-    this.http.get('http://107.22.25.39:3000/books').subscribe((data) => {
+    this.http.get('https://bk48t1027l.execute-api.us-east-1.amazonaws.com/dev/books').subscribe((data) => {
       this.booksData = Array.isArray(data) && data.sort((a: any, b: any) => a.title.localeCompare(b.title));
       this.booksDataCategories = Array.isArray(data) && data.sort((a: any, b: any) => a.title.localeCompare(b.title));;
     });
@@ -33,7 +33,7 @@ export class HomeComponent {
   }
 
   getBooksCate = (btnValue: any) => {
-    this.http.get('http://107.22.25.39:3000/books').subscribe((data) => {
+    this.http.get('https://bk48t1027l.execute-api.us-east-1.amazonaws.com/dev/books').subscribe((data) => {
       if(btnValue=="all") {
         this.booksDataCategories = Array.isArray(data) && data.sort((a: any, b: any) => a.title.localeCompare(b.title));;
       } else {
